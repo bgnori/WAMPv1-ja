@@ -91,7 +91,7 @@
                      <a href="#building_blocks">構成要素(原文:Building Blocks)</a>
                   </li>
                   <li>
-                     <a href="#payload_format">ペイロード・フォーマット(原文:Payload Format)</a>
+                     <a href="#payload_format">ペイロードの様式(原文:Payload Format)</a>
                   </li>
                   <li>
                      <a href="#message_types">メッセージの種類(原文:Message Types)</a>
@@ -188,12 +188,15 @@
 
 
       <a name="payload_format"></a>
-      <h3>Payload Format</h3>
+      <h3>ペイロードの様式(Payload Format)</h3>
       <p>
-         All messages are transmitted as <a href="http://tools.ietf.org/html/rfc6455" target="_blank">WebSocket</a>
-         messages of payload type <i>text</i>, and hence
-         <a href="http://tools.ietf.org/html/rfc3629" target="_blank">UTF-8</a> encoded,
-         with the payload being valid <a href="http://tools.ietf.org/html/rfc4627" target="_blank">JSON</a>.
+         すべてのメッセージは<a href="http://tools.ietf.org/html/rfc6455" target="_blank">WebSocket</a>の<i>text</i>種別のメッセージとして送信される。
+         <!-- All messages are transmitted as <a href="http://tools.ietf.org/html/rfc6455" target="_blank">WebSocket</a> -->
+         <!-- messages of payload type <i>text</i>, and hence -->
+         したがって、<a href="http://tools.ietf.org/html/rfc3629" target="_blank">UTF-8</a>でエンコードされ、
+         <!-- <a href="http://tools.ietf.org/html/rfc3629" target="_blank">UTF-8</a> encoded, -->
+         妥当な<a href="http://tools.ietf.org/html/rfc4627" target="_blank">JSON</a>.である。
+         <!-- with the payload being valid <a href="http://tools.ietf.org/html/rfc4627" target="_blank">JSON</a>.-->
       </p>
       <div class="up">
             <a href="#top">Up</a>
