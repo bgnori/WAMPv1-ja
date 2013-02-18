@@ -72,14 +72,12 @@
    <div id="page_wrapper">
 
       <a name="top"></a>
-      <h1 class="title">ウェブソケット・アプリケーション・メッセージングプロトコル</h1>
+      <h1 class="title">ウェブソケット・アプリケーション・メッセージング・プロトコル</h1>
 
       <p>
-         The following is an informal definition of WAMP - The WebSocket Application
-         Messaging Protocol.
-         The text describes version <b>1</b> of the protocol and should be sufficient
-         for developers to create interoperable implementations.
-         Specific features are subject to change in WAMP v2.
+         ウェブソケット・アプリケーション・メッセージング・プロトコルの概要について記述します。
+         当文書はバージョン<b>1</b>について記述し、内容は開発者が相互運用可能な実装を作り出すのに足るはずです。
+         個々の機能は WAMP v2で変更され得ます。
       </p>
 
       <br>
