@@ -85,24 +85,24 @@
       <div id="toc">
          <ul>
             <li>
-               <a href="#overview">Overview</a>
+               <a href="#overview">概要(Overview)</a>
                <ul>
                   <li>
-                     <a href="#building_blocks">Building Blocks</a>
+                     <a href="#building_blocks">構成要素(原文:Building Blocks)</a>
                   </li>
                   <li>
-                     <a href="#payload_format">Payload Format</a>
+                     <a href="#payload_format">ペイロード・フォーマット(原文:Payload Format)</a>
                   </li>
                   <li>
-                     <a href="#message_types">Message Types</a>
+                     <a href="#message_types">メッセージの種類(原文:Message Types)</a>
                   </li>
                   <li>
-                     <a href="#uris_and_curies">URIs and CURIEs</a>
+                     <a href="#uris_and_curies">URIとCURI (原文:URIs and CURIEs)</a>
                   </li>
                </ul>
             </li>
             <li>
-               <a href="#auxiliary_messages">Auxiliary Messages</a>
+               <a href="#auxiliary_messages">補助的なメッセージ(原文:Auxiliary Messages)</a>
                <ul>
                   <li><a href="#welcome_message">WELCOME Message</a></li>
                   <li><a href="#prefix_message">PREFIX Message</a></li>
@@ -117,23 +117,23 @@
                </ul>
             </li>
             <li>
-               <a href="#pubsub">Publish &amp; Subscribe</a>
+               <a href="#pubsub">発行と購読(原文: Publish &amp; Subscribe)</a>
                <ul>
-                  <li><a href="#subscribe_message">SUBSCRIBE Message</a></li>
-                  <li><a href="#unsubscribe_message">UNSUBSCRIBE Message</a></li>
-                  <li><a href="#publish_message">PUBLISH Message</a></li>
-                  <li><a href="#event_message">EVENT Message</a></li>
+                  <li><a href="#subscribe_message">購読開始(SUBSCRIBE Message)</a></li>
+                  <li><a href="#unsubscribe_message">購読終了(UNSUBSCRIBE Message)</a></li>
+                  <li><a href="#publish_message">発行(PUBLISH Message)</a></li>
+                  <li><a href="#event_message">イベント(EVENT Message)</a></li>
                </ul>
             </li>
             <li>
-               <a href="#references">References</a>
+               <a href="#references">参考文献(References)</a>
             </li>
          </ul>
       </div>
 
 
       <a name="overview"></a>
-      <h2>Overview</h2>
+      <h2>概要(Overview)</h2>
       <p>
       </p>
 
