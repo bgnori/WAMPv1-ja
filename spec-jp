@@ -122,7 +122,7 @@
                   <li><a href="#subscribe_message">購読開始(SUBSCRIBE Message)</a></li>
                   <li><a href="#unsubscribe_message">購読終了(UNSUBSCRIBE Message)</a></li>
                   <li><a href="#publish_message">発行(PUBLISH Message)</a></li>
-                  <li><a href="#event_message">イベント(EVENT Message)</a></li>
+                  <li><a href="#event_message">通知(EVENT Message)</a></li>
                </ul>
             </li>
             <li>
@@ -139,9 +139,10 @@
 
 
       <a name="building_blocks"></a>
-      <h3>Building Blocks</h3>
+      <h3>構成要素(Building Blocks)</h3>
       <p>
-         WAMP is based on established Web standards:
+         WAMPは確立されたwebの標準に基づいています:
+         <!-- WAMP is based on established Web standards: -->
          <ul>
             <li>WebSocket</li>
             <li>JSON</li>
@@ -149,28 +150,37 @@
          </ul>
       </p>
       <p>
-         Though WAMP is currently defined with respect to above concrete standards,
-         effectively it only makes the following assumptions.
+         WAMPは現状これらの標準に基づいていますが、
+         <!-- Though WAMP is currently defined with respect to above concrete standards,-->
+         実際的には次のような仮定のみに依っています。
+         <!-- effectively it only makes the following assumptions. -->
       </p>
 
       <p>
-         <b>Transport</b><br/>
-         A reliable, ordered, full-duplex message channel is assumed.
-         The default binding is <i>WebSocket</i> as <i>Transport</i>.
+         <b>トランスポート(Transport)</b><br/>
+         信頼できる、順序が守られた、全二重の通信路が仮定されています。
+         <!-- A reliable, ordered, full-duplex message channel is assumed. -->
+         既定はWebSocketがトランスポートです。
+         <!-- The default binding is <i>WebSocket</i> as <i>Transport</i>. -->
       </p>
 
       <p>
-         <b>Serialization</b><br/>
-         A message payload serialization format is assumed that at least provides:
-         integers, strings and lists.
-         The default binding is <i>JSON</i> as <i>Serialization</i>.
+         <b>直列化(Serialization)</b><br/>
+         メッセージのペイロードを直列化する様式に関しては、次のような機能を仮定してます。
+         <!-- A message payload serialization format is assumed that at least provides: -->
+         整数、文字列、リスト
+         <!-- integers, strings and lists. -->
+         既定はJSONを直列化の方法として用います。
+         <!-- The default binding is <i>JSON</i> as <i>Serialization</i>.-->
       </p>
 
       <p>
-         <b>IDs</b><br/>
-         An ID space that allows global assignment and resolution is assumed.
-         The default binding is <i>URIs</i> from the HTTP scheme as <i>IDs</i>
-         for both topics and procedures.
+         <b>識別子(IDs)</b><br/>
+         識別子の名前空間は大域的な割り付けと解決可能性を仮定しています。 
+         <!-- An ID space that allows global assignment and resolution is assumed. -->
+         既定はHTTPのスキームのURIをtopicとprocedureの識別子として用います。
+         <!-- The default binding is <i>URIs</i> from the HTTP scheme as <i>IDs</i> 
+         for both topics and procedures. -->
       </p>
       <div class="up">
             <a href="#top">Up</a>
