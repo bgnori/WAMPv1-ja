@@ -204,28 +204,31 @@
 
 
       <a name="message_types"></a>
-      <h3>Message Types</h3>
+      <h3>メッセージの種別(Message Types)</h3>
 
       <p>
-         WAMP defines the message types which are used in the communication between two
-         WebSocket endpoints, the <i>client</i> and the <i>server</i>, and describes associated semantics.
+         WAMPでは、2つのWebSocket端点、<i>クライアント</i>と<i>サーバ</i>との間で
+         通信での意味を与えるためにメッセージの種別を定めている。
+         <!-- WAMP defines the message types which are used in the communication between two -->
+         <!-- WebSocket endpoints, the <i>client</i> and the <i>server</i>, and describes associated semantics. -->
       </p>
 
       <p>
-         WAMP is based on the following 9 message types:
+         WAMPは次の9つの種別を用いている。
+         <!-- WAMP is based on the following 9 message types: -->
       </p>
 
       <table class="developertable">
-         <tr><th>Message</th><th>Type ID</th><th>Direction</th><th>Category</th></tr>
-         <tr><td><a href="#welcome">WELCOME</a></td><td>0</td><td>Server-to-client</td><td>Auxiliary</td></tr>
-         <tr><td><a href="#prefix">PREFIX</a></td><td>1</td><td>Client-to-server</td><td>Auxiliary</td></tr>
-         <tr><td><a href="#call">CALL</a></td><td>2</td><td>Client-to-server</td><td>RPC</td></tr>
-         <tr><td><a href="#call_result">CALLRESULT</a></td><td>3</td><td>Server-to-client</td><td>RPC</td></tr>
-         <tr><td><a href="#call_error">CALLERROR</a></td><td>4</td><td>Server-to-client</td><td>RPC</td></tr>
-         <tr><td><a href="#subscribe">SUBSCRIBE</a></td><td>5</td><td>Client-to-server</td><td>PubSub</td></tr>
-         <tr><td><a href="#unsubscribe">UNSUBSCRIBE</a></td><td>6</td><td>Client-to-server</td><td>PubSub</td></tr>
-         <tr><td><a href="#publish">PUBLISH</a></td><td>7</td><td>Client-to-server</td><td>PubSub</td></tr>
-         <tr><td><a href="#event">EVENT</a></td><td>8</td><td>Server-to-client</td><td>PubSub</td></tr>
+         <tr><th>Message</th><th>Type ID</th><th>メッセージが送られる向き</th><th>分類</th></tr>
+         <tr><td><a href="#welcome">WELCOME</a></td><td>0</td><td>サーバがクライアントに送る</td><td>補助</td></tr>
+         <tr><td><a href="#prefix">PREFIX</a></td><td>1</td><td>クライアントがサーバに送る</td><td>補助</td></tr>
+         <tr><td><a href="#call">CALL</a></td><td>2</td><td>クライアントがサーバに送る</td><td>RPC</td></tr>
+         <tr><td><a href="#call_result">CALLRESULT</a></td><td>3</td><td>サーバがクライアントに送る</td><td>RPC</td></tr>
+         <tr><td><a href="#call_error">CALLERROR</a></td><td>4</td><td>サーバがクライアントに送る</td><td>RPC</td></tr>
+         <tr><td><a href="#subscribe">SUBSCRIBE</a></td><td>5</td><td>クライアントがサーバに送る</td><td>PubSub</td></tr>
+         <tr><td><a href="#unsubscribe">UNSUBSCRIBE</a></td><td>6</td><td>クライアントがサーバに送る</td><td>PubSub</td></tr>
+         <tr><td><a href="#publish">PUBLISH</a></td><td>7</td><td>クライアントがサーバに送るserver</td><td>PubSub</td></tr>
+         <tr><td><a href="#event">EVENT</a></td><td>8</td><td>サーバがクライアントに送る</td><td>PubSub</td></tr>
       </table>
       <div class="up">
             <a href="#top">Up</a>
@@ -234,7 +237,7 @@
 
       <a name="uris_and_curies"></a>
       <h3>URIs and CURIEs</h3>
-      <p>Write me.</p>
+      <p>だれか書いてくれ〜(原文: Write me.)</p>
       <div class="up">
             <a href="#top">Up</a>
          </div>
