@@ -56,9 +56,9 @@
                   </div>
                   <div id="navbar">
                      <a href="/"  class="navitem" >Home</a>
-                     <a href="/why"  class="navitem" >Why?</a>
-                     <a href="/implementations"  class="navitem" >Implementations</a>
-                     <a href="/spec"  class="navitem_selected" >Specification</a>
+                     <a href="/why"  class="navitem" >なぜ使うの?</a>
+                     <a href="/implementations"  class="navitem" >実装</a>
+                     <a href="/spec"  class="navitem_selected" >仕様</a>
                      <a href="/faq"  class="navitem" >FAQ</a>
                   </div>
                </div>
