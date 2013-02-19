@@ -540,10 +540,8 @@
       </p>
 
       <p>
-      The execution and sending is asynchronous, and there MAY be more than one RPC outstanding.
       実行と送信は非同期的に行われ、それゆえ複数のRPCが未完了でありうる(MAY)。
       <!-- The execution and sending is asynchronous, and there MAY be more than one RPC outstanding. -->
-      An RPC is called outstanding (from the point of view of the client), when a result or error has not
       RPCが"未完了"(クライアントの視点から見て)とは、結果もしくはエラーが
       クライアントによって受信されていない事をさす。
       <!-- An RPC is called outstanding (from the point of view of the client), when a result or error has not -->
