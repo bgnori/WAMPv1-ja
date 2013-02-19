@@ -316,27 +316,45 @@
 
       <a name="prefix_message"></a>
       <h3>PREFIX Message</h3>
-      <p>Both <i>procedures</i> (and <i>errors</i>) in RPC and <i>topics</i> in PubSub are identified using <a href="#curie">URIs or CURIEs</a>.
-      Whenever a URI is used, full identification of the procedure/topic is provided by this URI.
-      However, URIs can get long, which means tedious to input for developers, and also resulting in
-      considerable volume on wire, when many small messages are exchanged.</p>
-      <p>To counter that, URIs MAY be abbreviated using the CURIE (Compact URI Expression) syntax.
-      For example, the (full) URI:</p>
+      RPCでの<i>procedures</i> (と<i>errors</i>)と 発行と購読の<i>topics</i>
+      が<a href="#curie">URIs or CURIEs</a>を用いて識別される。
+      <!-- <p>Both <i>procedures</i> (and <i>errors</i>) in RPC and <i>topics</i> in PubSub are identified using <a href="#curie">URIs or CURIEs</a>. -->
+
+      URIが用いられるときは常に、そのURIによってprocedure/topicの完全な識別が提供される。
+      <!-- Whenever a URI is used, full identification of the procedure/topic is provided by this URI. -->
+      しかしながら、URIはとても長く成りえて、開発者にとって入力が面倒である。
+      そして多くの小さなメッセージがやりとりされる際には
+      かなりの長さをネットワーク上に送らなくてはならなくなる。
+      <!-- However, URIs can get long, which means tedious to input for developers, and also resulting in-->
+      <!-- considerable volume on wire, when many small messages are exchanged.-->
+      </p>
+      <p>
+      この問題に対処するためにURIは、CURIE構文を用いて短縮されてもよい(MAY)。
+      CURIEとはCompact URI Expressionのことである。
+      <!-- To counter that, URIs MAY be abbreviated using the CURIE (Compact URI Expression) syntax.-->
+      <!-- For example, the (full) URI:-->
+      たとえば次のような(完全な)URIであれば、
+      </p>
 
       <center><span class="uri">http://example.com/simple/calc#square</span></center>
 
-      <p>may be abbreviated as</p>
+      <p><!--may be abbreviated as--> 次のように短縮される:</p>
 
       <center><span class="uri">calc:square</span></center>
 
-      <p>when it was previously agreed that the <i>prefix</i> <span class="uri">calc</span> is meant to stand for
+      <p>
+      ただし、<i>接頭子</i> <span class="uri">calc</span>
+      は事前に次を意味すると合意しているとする。
+      <!--when it was previously agreed that the <i>prefix</i> <span class="uri">calc</span> is meant to stand for-->
 
       <center><span class="uri">http://example.com/simple/calc#</span></center>
       <br/>
 
-      <p>To establish such agreement, a client sends a <span class="message_part">PREFIX</span> message</p>
+      <p>
+      このような合意を事前に成立させるためにクライアント(訳注: サーバじゃないんだ？！)は、<span class="message_part">PREFIX</span>メッセージをサーバに送信する。</p>
+      <!-- To establish such agreement, a client sends a <span class="message_part">PREFIX</span> message</p> -->
       <p class="message">[ TYPE_ID_PREFIX , prefix , URI ]</p>
-      <p>to the server.</p>
+      <p><!-- to the server.--></p>
 
       <div class="msgex">
          <span class="message_part">PREFIX</span> message
@@ -353,16 +371,32 @@
       </div>
 
 
-      <p>The agreement is per-connection, and has a lifetime starting with the server receiving a
-      <span class="message_part">PREFIX</span> message establishing a prefix-to-URI mapping, and ending
-      with the WebSocket connection.</p>
+      <p>合意は接続毎で、その寿命はサーバが
+      <!--The agreement is per-connection, and has a lifetime starting with the server receiving a -->
+      <!-- <span class="message_part">PREFIX</span> message establishing a prefix-to-URI mapping, and ending -->
+      prefixとURIのマッピングを定義する
+      <span class="message_part">PREFIX</span>messageを受け取った時から始まり、
+      使用しているWebSocketが閉じられたときに終了する。
+      <!-- with the WebSocket connection. --></p>
 
-      <p>The message is a JSON list consisting of <span class="message_part">TYPE_ID_PREFIX</span>, the message type ID as an integer, followed
-      by the <span class="message_part">prefix</span>, a string to be used as prefix,
-      followed by <span class="message_part">URI</span>, the URI which is subsequently to be abbreviated using the prefix.</p>
+      <p>
+      メッセージはJSONリストであり、それは次の要素を順に含む。
+      それらは、<span class="message_part">TYPE_ID_PREFIX</span> 
+      メッセージ種別識別子の整数値、
+      <span class="message_part">prefix</span>、 prefixとして使用される文字列、
+      <span class="message_part">URI</span>, prefixによって短縮表現されるURI
+      である。
+      <!-- The message is a JSON list consisting of <span class="message_part">TYPE_ID_PREFIX</span>, the message type ID as an integer, followed -->
+      <!-- by the <span class="message_part">prefix</span>, a string to be used as prefix, -->
+      <!-- followed by <span class="message_part">URI</span>, the URI which is subsequently to be abbreviated using the prefix.</p> -->
 
-      <p>Both the <span class="message_part">prefix</span> and the <span class="message_part">URI</span> MUST follow the requirements as
-      set forth in <a href="#curie">URIs or CURIEs</a></p>
+      <p>
+
+      <span class="message_part">prefix</span>と<span class="message_part">URI</span>は次の仕様をみたさなければならない(MUST)。
+      <!-- Both the <span class="message_part">prefix</span> and the <span class="message_part">URI</span> MUST follow the requirements as -->
+      ??(訳注:意味とれず)
+      <!-- set forth in <a href="#curie">URIs or CURIEs</a> -->
+      </p>
 
       <div class="up">
             <a href="#top">Up</a>
