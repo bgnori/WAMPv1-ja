@@ -699,9 +699,12 @@
 
 
       <a name="pubsub"></a>
-      <h2>Publish &amp; Subscribe</h2>
+      <h2>発行と購読(原文: Publish &amp; Subscribe、訳注: 「発行と引用」が普通かもしれない)</h2>
 
-      <p>The Publish &amp; Subscribe messaging pattern is realized with 4 messages:</p>
+      <p>
+      発行と購読のメッセージ様式は次の4つのメッセージ種別で実現される:
+      <!-- The Publish &amp; Subscribe messaging pattern is realized with 4 messages: -->
+      </p>
 
       <ul>
          <li><span class="message_part">SUBSCRIBE</span></li>
@@ -711,22 +714,35 @@
       </ul>
 
       <p>
-         Upon subscribing to a topic via the <span class="message_part">SUBSCRIBE</span> message,
+         <span class="message_part">SUBSCRIBE</span> メッセージでトピックを購読することにより、
+         クライアントは、<span class="message_part">EVENT</span> メッセージで
+         該当のトピックに対する発行を非同期のイベントで通知される。
+         購読はセッションの間、持続する。
+         クライアントは<span class="message_part">UNSUBSCRIBE</span>メッセージで
+         購読を停止することができる。
+         <!-- Upon subscribing to a topic via the <span class="message_part">SUBSCRIBE</span> message,
          a client will be receiving asynchronous events published to the respective topic via
          the <span class="message_part">EVENT</span> message. Clients publish to a topic via
          the <span class="message_part">PUBLISH</span> message.
          An subscription lasts for the duration of a session, unless a client opts out from
-         a previous subscription via the <span class="message_part">UNSUBSCRIBE</span> message.
+         a previous subscription via the <span class="message_part">UNSUBSCRIBE</span> message. -->
       </p>
 
       <p>
-         A client may subscribe to zero, one or more topics, and clients publish to topics without
-         knowledge of subscribers.
+         クライアントは0個以上のトピックを購読することができる(MAY)。
+         クライアントはトピックに対して、トピックの購読者に関して知ることなく発行をを行う。
+         <!-- A client may subscribe to zero, one or more topics, and clients publish to topics without
+         knowledge of subscribers. -->
       </p>
       <p>
-         WAMPv1 has no feedback mechanism for when a subscribe or publish fails, i.e. when
+         WAMPv1 は、購読もしくは発行が失敗した場合にそれを知らせる機構を持たない。
+         具体的には購読や発行が(訳注:サーバによって？)拒否された場合などである。
+         クライアントが購読もしくは発行したときに、
+         エラーの応答もなく、失敗したアクションはサーバに無視される。
+         
+         <!-- WAMPv1 has no feedback mechanism for when a subscribe or publish fails, i.e. when
          the subscription or publication is denied. When a client subscribes or publishes,
-         there is no error feedback and a failed action is just silently ignored by the server.
+         there is no error feedback and a failed action is just silently ignored by the server. -->
       </p>
       <div class="up">
             <a href="#top">Up</a>
@@ -734,24 +750,41 @@
 
 
       <a name="subscribe_message"></a>
-      <h3>SUBSCRIBE Message</h3>
-      <p>A client requests access to a valid <span class="message_part">topicURI</span> (or CURIE from Prefix) to receive events published to the given <span class="message_part">topicURI</span>.</p>
+      <h3>SUBSCRIBE メッセージ</h3>
+      <p>
+      クライアントは
+      妥当な<span class="message_part">topicURI</span> (もしくは PrefixのCURIE)
+      を用いて、
+      <span class="message_part">topicURI</span>が指定するトピックへ発行された
+      イベントの受け取りを要求する.
+      <!-- A client requests access to a valid <span class="message_part">topicURI</span> 
+      (or CURIE from Prefix) to receive events published to the given <span class="message_part">topicURI</span>. -->
+      </p>
       <p class="message">[ TYPE_ID_SUBSCRIBE , topicURI ]</p>
 
-      <p>Upon a successful subscription the session will start receiving messages in the EVENT in the context of the <span class="message_part">topicURI</span>.
-      The request is asynchronous, the server will not return an acknowledgement of the subscription.</p>
+      <p>
+      (購読の)セッションは、うまくいった購読(リクエスト)のもと、
+      <span class="message_part">topicURI</span> Eventメッセージを
+      受信することで始まる。
+      要求は非同期的で、サーバは購読が開始されたことに対する了解応答を返さない。
 
-      <i>Examples</i>
+      <!-- Upon a successful subscription the session will start receiving messages 
+      in the EVENT in the context of the <span class="message_part">topicURI</span>.
+      The request is asynchronous, the server will not return an acknowledgement of the subscription. -->
+      </p>
+
+      <i>例</i>
 
       <div class="msgex">
-         <span class="message_part">SUBSCRIBE</span> message with fully qualified URI
+         fully qualified URIを用いた
+         <span class="message_part">SUBSCRIBE</span> メッセージ
          <pre class="brush: javascript; toolbar: false; auto-links: false; gutter: false;">
             [5, "http://example.com/simple"]
          </pre>
       </div>
 
       <div class="msgex">
-         <span class="message_part">SUBSCRIBE</span> message with CURIE
+         CURIEを用いた<span class="message_part">SUBSCRIBE</span>メッセージ
          <pre class="brush: javascript; toolbar: false; auto-links: false; gutter: false;">
             [5, "event:myevent1"]
          </pre>
