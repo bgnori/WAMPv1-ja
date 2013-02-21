@@ -796,22 +796,33 @@
 
 
       <a name="unsubscribe_message"></a>
-      <h3>UNSUBSCRIBE Message</h3>
-      <p>Calling unsubscribe on a <span class="message_part">topicURI</span> informs the server to stop delivering messages to
-      the client previously subscribed to that <span class="message_part">topicURI</span>.</p>
+      <h3>UNSUBSCRIBE メッセージ</h3>
+      <p>
+      Calling unsubscribe on a 
+      <span class="message_part">topicURI</span> を指定して購読解除を呼び出すと
+      サーバに
+      <span class="message_part">topicURI</span>で購読している
+      メッセージの送信を止めるように伝えることになる。
+      (訳者疑問点: subscribe後にeventがくる前にunsubscribeとか大丈夫なの？
+      メッセージの順序が入れ替わるわけではないから大丈夫だろうが)
+      <!-- Calling unsubscribe on a <span class="message_part">topicURI</span> informs the server to stop delivering messages to
+      the client previously subscribed to that <span class="message_part">topicURI</span>. -->
+      </p>
       <p class="message">[ TYPE_ID_UNSUBSCRIBE , topicURI ]</p>
 
-      <i>Examples</i>
+      <i>例</i>
 
       <div class="msgex">
-         <span class="message_part">UNSUBSCRIBE</span> message with fully qualified URI
+         fully qualified URIを用いた
+         <span class="message_part">UNSUBSCRIBE</span>メッセージ
          <pre class="brush: javascript; toolbar: false; auto-links: false; gutter: false;">
             [6, "http://example.com/simple"]
          </pre>
       </div>
 
       <div class="msgex">
-         <span class="message_part">UNSUBSCRIBE</span> message with CURIE
+         CURIEを用いた
+         <span class="message_part">UNSUBSCRIBE</span> メッセージ
          <pre class="brush: javascript; toolbar: false; auto-links: false; gutter: false;">
             [6, "event:myevent1"]
          </pre>
